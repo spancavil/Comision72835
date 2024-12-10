@@ -1,0 +1,6 @@
+OTROS STACKS
+
+MEAN (MongoDB, Express.js, Angular, Node.js): Similar al MERN, pero utilizando Angular en lugar de React para el frontend. Ambos stacks son excelentes opciones para desarrollar aplicaciones web robustas.
+LAMP (Linux, Apache, MySQL, PHP): Aunque más tradicional, LAMP sigue siendo muy utilizado para el desarrollo de aplicaciones web. Es una combinación estable y madura, ideal para proyectos de diversa envergadura.
+Python (Django/Flask): Python, con frameworks como Django y Flask, es el rey de la ciencia de datos, machine learning y el desarrollo web backend. Su sintaxis sencilla y la gran cantidad de librerías disponibles lo hacen muy atractivo para una amplia gama de aplicaciones.
+Java (Spring): Java, con el framework Spring, es un clásico en el desarrollo empresarial. Se utiliza para crear aplicaciones robustas y escalables, especialmente en grandes corporaciones, sobre todo Spring Boot que es una capa adicional que se coloca sobre Spring para hacerlo autoconfigurable.

@@ -1,0 +1,5 @@
+https://nodejs.org/en/
+https://nodejs.org/en/about/previous-releases
+
+Node Version Manager (NVM) => https://github.com/nvm-sh/nvm
+NVM for Windows => https://github.com/coreybutler/nvm-windows
