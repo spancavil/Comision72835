@@ -12,18 +12,45 @@ Definir clase Contador:
 
 class Counter {
 
-    //Private fields
-    #count
-    #responsable
-
     static quantityOfCounters = 0
     static globalCount = 0
 
     constructor (responsable) {
-
+        const nombreLoco = "Yair"
+        this.count = 0
+        this.responsable = responsable
     }
 
-    getResponsable = () => {}
+    getResponsable = () => this.responsable
 
-    contar = () => {}
+    contar = () => {
+        this.count += 1
+        Counter.globalCount += 1
+    }
+
+    getCuentaIndividual = () => {
+        return this.count
+    }
+
+    static getCuentaGlobal = () => Counter.globalCount
 }
+
+const counter1 = new Counter("Jose")
+
+counter1.contar()
+counter1.contar()
+counter1.contar()
+
+const counter2 = new Counter("Nicolas")
+
+counter2.contar()
+counter2.contar()
+
+console.log(counter1.getCuentaIndividual());
+
+console.log(counter2.getCuentaIndividual());
+
+console.log(Counter.getCuentaGlobal());
+
+
+
