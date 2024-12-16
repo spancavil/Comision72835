@@ -1,0 +1,5 @@
+ES6 => https://262.ecma-international.org/6.0/
+Shallow copy => https://developer.mozilla.org/en-US/docs/Glossary/Shallow_copy
+Deep copy => https://developer.mozilla.org/en-US/docs/Glossary/Deep_copy
+Dynamic imports => https://javascript.info/modules-dynamic-imports
+Nullish operator => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
