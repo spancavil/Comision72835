@@ -27,3 +27,8 @@ const noRepetidos = new Set(["manzana", "manzana", "arandanos", "kiwi"])
 console.log(noRepetidos);
 const noRepetidosArray = Array.from(noRepetidos)
 console.log(noRepetidosArray);
+
+const setPropiedadesSinRepetir = new Set([...Object.keys(objetos[0]), ...Object.keys(objetos[1])])
+// console.log(arrayPropiedadesSinRepetir)
+const noRepetidosConsigna = Array.from(setPropiedadesSinRepetir)
+console.log(noRepetidosConsigna);

@@ -20,3 +20,30 @@
     nueva fecha
     El método debe copiar el evento existente, con una nueva localidad, nueva fecha, nuevo id y sus participantes vacíos (Usar spread operator para el resto de las propiedades)
 */
+
+class TicketManager {
+    #eventos
+    #id
+    static precioBaseDeGanancia = 1300
+
+    constructor () {
+        this.#eventos = []
+        this.#id = 1
+    }
+
+    getEventos = () => this.#eventos
+    agregarEvento = (nombre,
+        lugar,
+        precio, //(deberá agregarse un 0.15 del valor original)
+        capacidad = 50,
+        fecha = new Date()) => {
+            this.#eventos.push({nombre, lugar, precio, capacidad, fecha, participantes: [], id: this.#id})
+            this.#id += 1
+        }
+}
+
+const ticketManager = new TicketManager()
+console.log(ticketManager.getEventos())
+ticketManager.agregarEvento("Superclasico", "Bombonera", 30000, 100000)
+console.log(ticketManager.getEventos());
+

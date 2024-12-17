@@ -1,10 +1,19 @@
 const originalArray = [{a: 1, b: 2}, {a: 3, b: "Hola"}]
 
 //Spread => shallow copy
+const copyShallow = [...originalArray]
+originalArray[0].b = 10
+console.log(copyShallow);
 
 //structuredClone => deep copy
+const copyStructured = structuredClone(originalArray)
+originalArray[1].b = "Chau"
+console.log(copyStructured);
 
 //También JSON.parse(JSON.stringify())
+const copyJson = JSON.parse(JSON.stringify(originalArray))
+originalArray[1].b = "Qué tal"
+console.log(copyJson);
 
 let object1 = {
     prop1: 2,
@@ -23,6 +32,7 @@ let object4 = {
     c: 3
 }
 
+//Asignamos propiedades restantes
 let {a, ...restoProps} = object4
 
 console.log(restoProps);
