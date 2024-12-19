@@ -24,6 +24,10 @@ const returnPromise = () => {
   })
 }
 
+setTimeout(()=> {
+  console.log('6');  
+}, 0)
+
 returnPromise()
   .then((value) => console.log(value))
   .catch((error) => console.log(error))

@@ -12,6 +12,8 @@ const myMapFunction = (array, callback) => {
 let newOwnArray = myMapFunction(data, x => x + 2)
 let newOwnArrayWithMap = data.map(x => x + 2)
 
+
+
 Array.prototype.myOwnMapFunction = function (callback) {
     let newArray = []
     //This hace referencia al nuevo array
@@ -22,5 +24,5 @@ Array.prototype.myOwnMapFunction = function (callback) {
     return newArray
 }
 
-let newOwnArrayModifyingPrototype = data.myOwnMapFunction(x => x + 1)
+let newOwnArrayModifyingPrototype = data.myOwnMapFunction(x => x**2)
 console.log({newOwnArrayModifyingPrototype});

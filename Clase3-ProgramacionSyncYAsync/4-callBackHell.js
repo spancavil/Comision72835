@@ -1,4 +1,4 @@
-function obtenerUsuario(id, callback) {
+/* function obtenerUsuario(id, callback) {
   // Simula una petición asíncrona a una API
   setTimeout(() => {
     const usuario = { id, nombre: 'Juan', apellido: 'Pérez' }
@@ -23,11 +23,12 @@ obtenerUsuario(1, (usuario) => {
   obtenerPublicaciones(usuario, (publicaciones) => {
     mostrarPublicaciones(publicaciones)
   })
-})
+}) */
 
 //Resolución con promises
-/* function obtenerUsuario(id) {
-  return new Promise((resolve) => {
+function obtenerUsuario(id) {
+  return new Promise((resolve, reject) => {
+    reject("Oops ha ocurrido un error")
     setTimeout(() => {
       const usuario = { id, nombre: 'Juan', apellido: 'Pérez' };
       resolve(usuario);
@@ -44,7 +45,22 @@ function obtenerPublicaciones(usuario) {
   });
 }
 
-obtenerUsuario(1)
+function mostrarPublicaciones(publicaciones) {
+  console.log(publicaciones)
+}
+
+/* obtenerUsuario(1)
   .then(usuario => obtenerPublicaciones(usuario))
   .then(publicaciones => mostrarPublicaciones(publicaciones))
   .catch(error => console.error(error)); */
+
+(async ()=> {
+  try {
+    const user = await obtenerUsuario(1)
+    const publicaciones = await obtenerPublicaciones(user)
+    mostrarPublicaciones(publicaciones)
+  } catch (error) {
+    console.log(error); 
+  }
+})()
+

@@ -14,6 +14,20 @@
 5. Definir una función asíncrona CALCULOS, y realizar pruebas utilizando async/await y try/catch
 */
 
+const suma = (sumando1, sumando2) => {
+    //NO
+    // return sumando1 + sumando2
+
+    return new Promise((res, rej) => {
+        //Rechazo temprano
+        if (sumando1 === 0 || sumando2 === 0) rej("Operación innecesaria")
+        const operacion = sumando1 + sumando2
+        if (operacion < 0) rej("La calculadora sólo debe devolver valores positivos")
+        res(operacion)
+    })
+}
+
+
 const division = (dividend, divisor) => {
     return new Promise((resolve, reject) => {
         if (divisor === 0) reject("No se puede dividir entre cero")
@@ -23,12 +37,15 @@ const division = (dividend, divisor) => {
 
 const calculos = async () => {
     try {
-        let result = await division(4, 0)
-        console.log(result)
+        // const sumaRes = await suma(0, 10)
+        // const sumaRes = await suma(10, 0)
+        // const sumaRes = await suma(10, -100)
+        const sumaRes = await suma(10, 20)
+        console.log(sumaRes);
+        
     } catch (error) {
         console.log(error)
     }
 }
 
 calculos()
-console.log("Hola!");
