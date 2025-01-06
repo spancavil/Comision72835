@@ -1,0 +1,8 @@
+https://nodejs.org/en/about
+
+Comandos npm => https://docs.npmjs.com/cli/v11/commands/npm
+
+Semantic versioning => https://semver.org/
+
+MomentJS => https://momentjs.com/
+
