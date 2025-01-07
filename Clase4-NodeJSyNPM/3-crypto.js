@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 
 // Datos a firmar
-const password = 'estAesMyPassUltraSecreta';
+const password = '1234';
 
 // Clave secreta (debe mantenerse en secreto)
 const secretKey = 'sjsjxuBSHASd';
@@ -20,6 +20,8 @@ hmac.update(password);
 const hash = hmac.digest('hex');
 
 console.log('HMAC generado:', hash);
+
+
 
 /* 
 IMPORTANTE
@@ -41,4 +43,4 @@ const compareInputs = ({hash, input}) => {
     return hmac.digest('hex') === hash
 }
 
-console.log(compareInputs({hash, input: 'estAesMyPassUltraSecreta'}))
+console.log(compareInputs({hash, input: '12345'}))

@@ -1,0 +1,14 @@
+{
+  "name": "clase-4---nodejs-y-npm",
+  "version": "1.0.0",
+  "main": "1-actividad.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
