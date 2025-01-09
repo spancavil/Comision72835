@@ -17,23 +17,21 @@ Requisitos:
     Incluir el manejo de errores (con throw new Error)
     Utilizar el módulo promises de fs dentro de una función async/await y utilizar JSON.stringify + JSON.parse para poder hacer las transformaciones json->objeto y viceversa
 */
-
 const fs = require('fs')
+const relativePath = './package.json'
+const outputPath = './info.json'
+
 const fn = async () => {
   try {
-    //Desarrollo
-    /*  let json = await fs.promises.readFile('./package.json', 'utf-8')
-    let data = JSON.parse(json)
-    console.log(data)
-    const dto = {
-      dataString: json,
-      dataParsed: data,
-      size: json.length,
+    let packageString = await fs.promises.readFile(relativePath, 'utf-8')
+    const packageObj = JSON.parse(packageString)
+    const info = {
+      contenidoStr: packageString,
+      contenidoObj: packageObj,
+      size: packageString.length,
     }
-    console.log(dto.size)
-
-    const dtoStringified = JSON.stringify(dto, null, '\t')
-    await fs.promises.writeFile('./info.json', dtoStringified) */
+    const infoStrinfied = JSON.stringify(info, null, '\t')
+    await fs.promises.writeFile(outputPath, infoStrinfied)
   } catch (error) {
     console.log(`Error en la operación de archivos: ${error.message}`)
   }

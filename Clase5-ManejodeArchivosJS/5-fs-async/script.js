@@ -1,4 +1,5 @@
 const fs = require('fs')
+
 const fn = async () => {
   await fs.promises.writeFile(
     './testAsync.txt',

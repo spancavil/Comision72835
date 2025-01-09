@@ -1,4 +1,11 @@
 const fs = require('fs')
-fs.unlink('./test.txt', (err) => {
-  if (err) console.log(`Error al eliminar el archivo: ${err.message}`)
-})
+try {
+  if (fs.existsSync('./test.txt')) {
+    fs.unlinkSync('./test.txt')
+    console.log('Termino de borrar el archivo')
+  }
+} catch (error) {
+  console.log('Error')
+} finally {
+  console.log('Fin del programa')
+}

@@ -8,7 +8,7 @@ const fn = async (dir) => {
     if (dir.isDirectory()) {
       //Por aquí hay una trampa...
       console.log(`This is a directory: ${dir.name}`)
-      fn(`${dir.parentPath}/${dir.name}`)
+      await fn(`${dir.parentPath}/${dir.name}`)
     }
     if (dir.isFile()) {
       console.log(`This is a file: ${dir.name}`)

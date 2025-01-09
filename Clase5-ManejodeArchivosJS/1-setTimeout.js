@@ -1,6 +1,6 @@
 const timer = (callback) => {
   console.log('Ejecutando...')
-  setTimeout(callback, 5000)
+  setTimeout(callback, 0)
 }
 
 const operation = () => console.log('Se ejecutó la operación')
