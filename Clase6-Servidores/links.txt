@@ -1,0 +1,5 @@
+NodeJS => https://nodejs.org/docs/latest/api/synopsis.html
+ExpressJS => https://expressjs.com/
+Deliver plain files => https://www.digitalocean.com/community/tutorials/use-expressjs-to-deliver-html-files
+Routing (avanzado) => https://expressjs.com/en/guide/routing.html
+Req.query => https://expressjs.com/en/5x/api.html#req.query
