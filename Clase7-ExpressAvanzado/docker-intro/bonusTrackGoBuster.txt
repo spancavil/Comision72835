@@ -1,0 +1,35 @@
+PRIMERO pullearse la imagen de gobuster:
+docker pull ghcr.io/oj/gobuster:latest
+
+DESPUES descargarse una wordlist (se utilizarán para ir probando las diversas URLs)
+hay varias wordlists disponibles:
+https://github.com/danielmiessler/SecLists/tree/master/Discovery/Web-Content
+
+Ejecución de gobuster:
+
+sudo docker run --rm -v "/home/spancavil/Downloads/:/wordlist" ghcr.io/oj/gobuster fuzz --url http://192.168.1.243:3006/FUZZ -w /wordlist/wordlist.txt 
+
+EXPLICACION
+Flags de docker
+1. el flag --rm genera que se borre el container automáticamente una vez ejecutado (sino queda corriendo)
+2. El -v monta un volumen:
+    - Copia lo que hay en la carpeta destino: /home/spancavil/Downloads/
+    - En la carpeta origen: /wordlist
+3. el nombre es ghcr.io/oj/gobuster (se ve que el entrypoint es gobuster, es decir que lo ejecuta automáticamente)
+
+Flags de gobuster
+4. El modo es fuzz (puede ser dir también)
+5. --url La url a escanear.
+6. -w especifica la wordlist a utilizar.
+7. OJO! no toma el localhost, hay que especificar la IP local donde esta ejecutando el server.
+
+VARIANTES
+
+a. Solo mandar verbos POST (idem ejecucion anterior, sumamos -m POST)
+sudo docker run --rm -v "/home/spancavil/Downloads/:/wordlist" ghcr.io/oj/gobuster fuzz --url http://192.168.1.243:3006/FUZZ -w /wordlist/wordlist.txt -m POST 
+
+b. Se puede utilizar dir también (por defecto recordar que utiliza el método GET)
+sudo docker run --rm -v "/home/spancavil/Downloads/:/wordlist" ghcr.io/oj/gobuster dir --url http://192.168.1.243:3006/ -w /wordlist/wordlist.txt
+
+c. Si quiero utilizar POST, al igual que antes debo especificarlo con el flag -m POST
+sudo docker run --rm -v "/home/spancavil/Downloads/:/wordlist" ghcr.io/oj/gobuster dir --url http://192.168.1.243:3006/ -w /wordlist/wordlist.txt -m POST

@@ -1,0 +1,6 @@
+GET: Used to request data from a specified resource. It is the most common method for retrieving data.
+POST: Used to send data to the server to create/update a resource. It is typically used when submitting forms or uploading files.
+PUT: Used to send data to the server to update a resource. It is similar to POST but is used when the client wants to replace the entire resource.
+DELETE: Used to request the deletion of a specified resource. It is used to remove data from the server.
+HEAD: Similar to GET, but the server responds with only the headers and no body. It is used to check the headers of a resource without downloading the entire resource.
+PATCH: Used to send data to the server to update a resource partially. It is used when only a part of the resource needs to be updated.

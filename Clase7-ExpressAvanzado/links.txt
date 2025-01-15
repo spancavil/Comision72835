@@ -1,0 +1,6 @@
+HTTP Status Code => https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+API => https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces
+Fetch API => https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+HTTP => https://blog.postman.com/what-is-http/
+Define Objects => https://dev.to/darkmavis1980/how-to-define-objects-with-type-definitions-in-jsdoc-comments-23n1
+Enumerating API - goBuster => https://github.com/OJ/gobuster

@@ -1,0 +1,32 @@
+docker build -t my-test-node-app . --no-cache
+
+/*
+docker build:
+docker: Esta es la herramienta de línea de comandos que interactúa con el demonio de Docker.
+build: Este subcomando le indica a Docker que construya una nueva imagen.
+-t mi-aplicacion-node:
+
+-t: La bandera -t se utiliza para asignar un nombre (tag) a la imagen que se está construyendo.
+mi-aplicacion-node: Este es el nombre que le hemos dado a nuestra imagen. Puedes elegir cualquier nombre que desees, pero es recomendable que sea descriptivo y fácil de recordar.
+. (punto):
+
+El punto al final indica el contexto de construcción. En este caso, le estamos diciendo a Docker que busque el Dockerfile en el directorio actual (donde se encuentra ejecutando el comando). 
+*/
+
+docker run --rm -p 3008:3008 my-test-node-app
+docker run --rm -p 3008:3008 my-test-node-app -d
+
+Con docker-compose
+------------------
+
+docker-compose build --no-cache
+docker-compose up
+docker-compose down
+
+Chequeo interactivo del container mediante CLI:
+sudo docker exec -it f1d2b093ada6 sh
+
+//Request utilizando curl, -v indica verbosidad
+curl -v http://localhost:3008/api/home
+
+

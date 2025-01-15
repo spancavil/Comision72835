@@ -1,0 +1,9 @@
+services:
+  node-test:
+    restart: unless-stopped
+    ports:
+      - '3008:3008'
+    container_name: node-test-container
+    build:
+      context: .
+      dockerfile: Dockerfile
