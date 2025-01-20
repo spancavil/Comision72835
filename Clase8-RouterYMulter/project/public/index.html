@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hola coders</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <section class="section">
+      <h1 class="title">Hola coders</h1>
+      <h4 class="title is-4">Agreguemos gatitos</h4>
+    </section>
+
+    <form class="box" action="http://localhost:3006/api/gatito" method="post">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input
+            id="name"
+            name="name"
+            class="input"
+            type="text"
+            placeholder="Ramón"
+          />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Raza</label>
+        <div class="control">
+          <!-- Es importante definir el name y el id para que sean enviados por body -->
+          <input
+            id="raza"
+            name="raza"
+            class="input"
+            type="text"
+            placeholder="Persa"
+          />
+        </div>
+      </div>
+
+      <div class="file">
+        <label class="file-label">
+          <input class="file-input" type="file" name="gatito" />
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fas fa-upload"></i>
+            </span>
+            <span class="file-label"> Choose a file… </span>
+          </span>
+        </label>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-link">Submit</button>
+        </div>
+        <div class="control">
+          <button class="button is-link is-light">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
