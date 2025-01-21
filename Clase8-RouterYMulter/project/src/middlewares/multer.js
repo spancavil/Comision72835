@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
   filename: function (req, file, callback) {
     const fileName = file.originalname.split('.')[0]
     const extension = file.originalname.split('.').pop()
-    callback(null, `${fileName}-${Date.now()}.${extension}`)
+    callback(null, `${fileName}-${Date.now()}-sarasa.${extension}`)
   },
 })
 

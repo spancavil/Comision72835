@@ -3,9 +3,15 @@ import { multerUploaderMiddleware } from '../middlewares/index.js'
 
 export const PetsRouter = Router()
 
+// export const PI = 3.14
+
+// /api/pets/
+
+const pets = []
+
 PetsRouter.get('/', (req, res) => {
-  //get users
-  res.send({ message: 'ok' })
+  //get pets
+  res.send({ message: 'Mascotas', data: pets })
 })
 
 /* PetsRouter.post('/', multerUploaderMiddleware.single('gatito'), (req, res) => {
@@ -20,22 +26,25 @@ PetsRouter.post(
     { name: 'gatito2', maxCount: 1 },
   ]),
   (req, res) => {
+    // console.log(req.file)
+
     console.log(req.files)
-    for (const file of req.files) {
-      //Logic here
+
+    const pet = req.body
+
+    if (!pet.name || !pet.raza) {
+      return res.status(400).send({
+        message: 'Error al crear la mascota',
+        error: 'Valores incompletos',
+      })
     }
-    res.send({ message: 'Gatito uploaded' })
+    pet.id = pets.length + 1
+
+    pets.push(pet)
+
+    return res.status(200).send({
+      message: 'Mascota creada',
+      data: { ...pet },
+    })
   }
 )
-
-//Handling multiple files
-/* const cpUpload = upload.fields([{ name: 'avatar', maxCount: 1 }, { name: 'gallery', maxCount: 8 }])
-app.post('/cool-profile', cpUpload, function (req, res, next) {
-  // req.files is an object (String -> Array) where fieldname is the key, and the value is array of files
-  //
-  // e.g.
-  //  req.files['avatar'][0] -> File
-  //  req.files['gallery'] -> Array
-  //
-  // req.body will contain the text fields, if there were any
-}) */
