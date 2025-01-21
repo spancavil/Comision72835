@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "36c13448-f314-41f7-9f7d-e3aeb4cf73b0",
+		"name": "Clase 8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6330947",
+		"_collection_link": "https://cloudy-star-580799.postman.co/workspace/Swagger-Test~bc04aa35-f1a6-46f5-a61a-717d4cf7e9af/collection/6330947-36c13448-f314-41f7-9f7d-e3aeb4cf73b0?action=share&source=collection_link&creator=6330947"
+	},
+	"item": [
+		{
+			"name": "Prueba multer pets",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "gatito1",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3006/pets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"pets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una mascota",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Juan",
+							"type": "text"
+						},
+						{
+							"key": "raza",
+							"value": "pepe",
+							"type": "text"
+						},
+						{
+							"key": "gatito1",
+							"type": "file",
+							"src": "/C:/Data/Profesor/Backend I/Comision 72835/Clase8-RouterYMulter/project/public/imyourcat.jpeg"
+						},
+						{
+							"key": "gatito2",
+							"type": "file",
+							"src": "/C:/Data/Profesor/Backend I/Comision 72835/Clase8-RouterYMulter/project/public/imyourcat.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/pets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"pets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener mascotas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3006/api/pets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"pets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3006/api/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"home"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
