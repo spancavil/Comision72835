@@ -1,11 +1,10 @@
 {
-  "name": "clase-7---express-avanzado",
+  "name": "clase-8---router-y-multer",
   "version": "1.0.0",
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node ./src/app.js",
-    "dev": "node --watch app.js",
+    "dev": "node --watch ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "uuid": "^11.0.5"
   }
 }

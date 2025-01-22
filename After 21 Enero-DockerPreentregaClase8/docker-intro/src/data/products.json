@@ -1,0 +1,35 @@
+[
+	{
+		"id": "dd536769-bf33-41b6-876e-a24754490e36",
+		"title": "titulo",
+		"description": "description",
+		"code": 1234,
+		"price": 200,
+		"status": true,
+		"stock": 10,
+		"category": "categoria",
+		"thumbnails": []
+	},
+	{
+		"id": "36640fac-f282-435d-b550-a24b1b2de526",
+		"title": "titulo 2",
+		"description": "description 2",
+		"code": 1234,
+		"price": 200,
+		"status": true,
+		"stock": 12,
+		"category": "categoria",
+		"thumbnails": []
+	},
+	{
+		"id": "67cbd923-2209-494f-a81a-ef0b3c82657e",
+		"title": "titulo 3",
+		"description": "description 3",
+		"code": 1234,
+		"price": 200,
+		"status": true,
+		"stock": 12,
+		"category": "categoria",
+		"thumbnails": []
+	}
+]

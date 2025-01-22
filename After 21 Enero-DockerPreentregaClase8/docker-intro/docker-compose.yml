@@ -2,7 +2,7 @@ services:
   node-test:
     restart: unless-stopped
     ports:
-      - '3008:3008'
+      - '8080:8080'
     container_name: node-test-container
     build:
       context: .

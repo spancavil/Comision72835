@@ -16,8 +16,8 @@ mi-aplicacion-node: Este es el nombre que le hemos dado a nuestra imagen. Puedes
 El punto al final indica el contexto de construcción. En este caso, le estamos diciendo a Docker que busque el Dockerfile en el directorio actual (donde se encuentra ejecutando el comando). 
 */
 
-docker run --rm -p 3008:3008 my-test-node-app
-docker run --rm -p 3008:3008 my-test-node-app -d
+docker run --rm -p 8080:8080 my-test-node-app
+docker run -d --rm -p 8080:8080 my-test-node-app
 
 /*
 Corremos el contenedor a partir de la imagen my-test-node-app:
