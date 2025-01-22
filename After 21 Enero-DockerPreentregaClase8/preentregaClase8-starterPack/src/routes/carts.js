@@ -1,8 +1,8 @@
-import {Router} from 'express'
+import { Router } from 'express'
 
-export const UsersRouter = Router()
+export const CartsRouter = Router()
 
-UsersRouter.get('/', (req, res) => {
+/* UsersRouter.get('/', (req, res) => {
     //get users
     res.send({message: 'ok'})
 })
@@ -10,4 +10,4 @@ UsersRouter.get('/', (req, res) => {
 UsersRouter.get('/:id', (req, res) => {
     //get users
     res.send({message: {...req.params}})
-})
+}) */
