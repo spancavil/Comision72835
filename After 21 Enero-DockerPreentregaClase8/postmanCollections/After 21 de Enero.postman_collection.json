@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "7f68f032-c243-4fe6-aba0-4ce9afbbe883",
+		"name": "After 21 de Enero",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6330947",
+		"_collection_link": "https://cloudy-star-580799.postman.co/workspace/Swagger-Test~bc04aa35-f1a6-46f5-a61a-717d4cf7e9af/collection/6330947-7f68f032-c243-4fe6-aba0-4ce9afbbe883?action=share&source=collection_link&creator=6330947"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Obtener todos los productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/products",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generar un producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"titulo 4\",\r\n    \"description\": \"description 4\",\r\n    \"code\": 1234,\r\n    \"price\": 200,\r\n    \"status\": true,\r\n    \"stock\": 12,\r\n    \"category\": \"categoria\",\r\n    \"thumbnails\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/products",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carts",
+			"item": []
+		}
+	]
+}
