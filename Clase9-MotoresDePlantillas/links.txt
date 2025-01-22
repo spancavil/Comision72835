@@ -1,0 +1,3 @@
+Handlebars => https://handlebarsjs.com/guide/#what-is-handlebars
+Cuándo NO usar handlebars => https://handlebarsjs.com/installation/when-to-use-handlebars.html
+Express handlebars => https://github.com/express-handlebars/express-handlebars
