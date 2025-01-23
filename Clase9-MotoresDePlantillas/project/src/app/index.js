@@ -12,16 +12,16 @@ const initApp = () => {
 
   app.use(express.static(config.dirname + 'src/public'))
 
+  //Definimos el motor de plantillas: handlebars
   app.engine('handlebars', engine())
   app.set('view engine', 'handlebars')
-
   app.set('views', config.dirname + 'src/views')
 
-  //Router para vistas
-  // app.use('/', ViewsRouter)
+  //Definimos el enrutador para las vistas
+  app.use('/', ViewsRouter)
 
   //Router para API (arranca con /api)
-  // app.use('/api/users', UsersRouter)
+  app.use('/api/users', UsersRouter)
 
   return app
 }

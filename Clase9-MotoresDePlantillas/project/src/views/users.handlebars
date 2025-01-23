@@ -1,13 +1,17 @@
 <div>
     <h1>Buenas {{user.name}}</h1>
     {{#if user.isAdmin}}
+        {{!-- Para que funcion #each userList debe ser un iterable --}}
         {{#each userList}}
             <div>
-                <p>{{this.name}}</p>
-                <p>{{this.surname}}</p>
+                <h3>apellido: {{this.apellido}}</h3>
+                <h3>correo: {{this.correo}}</h3>
+                <h3>telefono: {{this.telefono}}</h3>
+                <h3>edad: {{this.edad}}</h3>
             </div>
         {{/each}}
     {{else}}
         <p>No sos admin, salí de acá!</p>
     {{/if}}
 </div>
+<script src="js/index.js"></script>
