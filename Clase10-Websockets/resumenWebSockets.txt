@@ -1,0 +1,39 @@
+A diferencia de una conexión HTTP normal, una conexión websocket no se interrumpe.
+Es un protocolo TCP independiente.
+
+Websocket handshake process
+Se establece un realtime communication channel entre cliente y servidor
+
+1. Cliente: Se envía una petición HTTP para un "upgrade" a ws:// o wss://
+2. Server: Chequea los headers. Envía una response con status 101 para realizar un switcheo para indicar un succesful upgrade.
+3. El cliente verifica la respuesta enviada y se finaliza el handshake y se inicia la comunicación entre cliente y server sin la necesidad de envios constantes de HTTP.
+
+URI format
+[ws OR wss]://host:port/path/path2?query1="lala"&query2="jojo"
+
+El port por default (si no se especifica) es 80 para ws y 443 para wss
+
+TRANSIMISION DE INFORMACION
+En los websockets la información se transfiere usando secuencias de frames.
+Cada frame tiene una estructura específica.
+FIN (final) 0 | 1 (1 indica que es un final fragment) => para mensajes fragmentados
+RSV1,2,3 es para futuros cambios en el protocolo (no muy importante)
+Opcode (el tipo de payload que se enviará) Text data | Binary data | Keep alive
+Mask Indica si el payload está enmascarado o no (1 o 0)
+Payload length el largo del payload.
+Masking key la key para enmascarar el payload
+Payload la información en sí
+
+Masking
+Hay una tendencia a cachear la información que se obtiene mediante HTTP lo cual puede suponer un problema para la comunicación, entonces se utiliza esta técnica de masking para hacer que la info recibida sea impredecible.
+Es decir el tráfico de websocket hace que se vea muy diferente al de HTTP, desalentando la manipulación o incorrecta interpretación, por ejemplo tratando de cachear las respuestas.
+
+Fragmentación
+Consiste en dividir un mensaje largo en smaller chunks, para prevenir un buffer overflow, que representaría un problema en la conexión => Relacionado bit FIN
+
+Applications
+Chat apps
+Real time apps 
+Gaming
+Real time drawing app
+Stock exchanges
