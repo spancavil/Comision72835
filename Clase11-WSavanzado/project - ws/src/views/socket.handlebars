@@ -1,0 +1,11 @@
+<ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+
+{{!--El módulo de socket es expuesto públicamente cuando se crea un server, en la línea 11 de server.js:
+const io = new Server(server) 
+De esta manera se puede consumir del lado del cliente
+--}}
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/socket.js"></script>

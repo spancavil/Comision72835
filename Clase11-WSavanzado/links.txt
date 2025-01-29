@@ -1,0 +1,4 @@
+Sweet alert 2 => https://sweetalert2.github.io/#examples
+Glitch no usar, no soporta versiones actuales de node.
+Deploy render => https://render.com/
+Cors => https://expressjs.com/en/resources/middleware/cors.html
