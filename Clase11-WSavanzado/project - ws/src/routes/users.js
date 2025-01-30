@@ -9,5 +9,5 @@ UsersRouter.get('/', (req, res) => {
 })
 
 UsersRouter.get('/students', (req, res) => {
-  res.send({ students })
+  res.json({ students })
 })

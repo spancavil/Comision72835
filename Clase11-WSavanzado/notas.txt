@@ -1,6 +1,6 @@
-Hacer una mini autenticación.
-Al usuario conectado, brindarle al historial de conversaciones.
-Buscar los usuarios registrados en coder y validarlos.
-Si el usuario ya está registrado, informar y pedir otro nombre.
-Informar a los demás usuarios cuando un usuario se conecta.
-Poder ver todos los usuarios conectados en el momento (dropdown o algo así)
+Hacer una mini autenticación. DONE
+Al usuario conectado, brindarle al historial de conversaciones. DONE
+Buscar los usuarios registrados en coder y validarlos. DONE
+Si el usuario ya está registrado, informar y pedir otro nombre. TODO
+Informar a los demás usuarios cuando un usuario se conecta. TODO (broadcast)
+Poder ver todos los usuarios conectados en el momento (dropdown o algo así) (Relacionado con el punto 4)
