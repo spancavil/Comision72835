@@ -1,0 +1,16 @@
+Iniciar fácilmente un docker desde el CLI
+
+docker pull mongodb/mongodb-community-server:latest
+
+docker run --name mongodb -p 27017:27017 -d mongodb/mongodb-community-server:latest
+
+Ejecutar un mongosh sin auth:
+mongosh --port 27017
+
+Ejecutar un mongosh con auth:
+mongosh --username root --password pass12345 --authenticationDatabase admin --port 27017
+
+Utilizando docker-compose (ver archivo docker-compose) y ejecutar:
+docker-compose up -d 
+Para finalizar:
+docker-compose down

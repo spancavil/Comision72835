@@ -1,0 +1,28 @@
+Volumenes de datos en DB No SQL
+-------------------------------
+Las bases de datos no relacionales (NoSQL) se han vuelto cada vez más populares para manejar grandes volúmenes de datos debido a varias razones clave:
+
+1. Escalabilidad Horizontal:
+Facilidad de crecimiento: Las bases de datos NoSQL están diseñadas para escalar horizontalmente de manera sencilla. Esto significa que puedes agregar más servidores a tu clúster para aumentar la capacidad de almacenamiento y procesamiento a medida que tus datos crecen.
+ACLARACION: El escalado horizontal de bases de datos se refiere a la capacidad de un sistema de bases de datos para aumentar su capacidad y rendimiento al agregar más servidores o nodos a una configuración existente. En lugar de aumentar los recursos de un solo servidor (escalado vertical), el escalado horizontal distribuye la carga de trabajo a través de múltiples servidores, lo que permite manejar volúmenes de datos más grandes y una mayor cantidad de usuarios simultáneos.
+Evita cuellos de botella: Al distribuir los datos a través de múltiples servidores, se evita un único punto de falla y se mejora el rendimiento, especialmente en operaciones de lectura y escritura.
+
+2. Flexibilidad de Esquema:
+Datos no estructurados o semiestructurados: Las bases de datos NoSQL son ideales para almacenar datos que no encajan perfectamente en un esquema rígido, como los datos JSON o los registros con atributos variables.
+Adaptación a cambios: Puedes modificar la estructura de los datos sobre la marcha sin necesidad de realizar grandes migraciones de datos.
+
+3. Alto Rendimiento:
+Optimizadas para grandes volúmenes: Las bases de datos NoSQL están diseñadas para manejar grandes cantidades de datos de manera eficiente, lo que las hace ideales para aplicaciones que requieren un alto rendimiento.
+Operaciones de lectura y escritura rápidas: Muchas bases de datos NoSQL ofrecen tiempos de respuesta muy bajos, especialmente para operaciones de lectura y escritura.
+
+4. Tolerancia a Fallos:
+Replicación de datos: La replicación de datos en múltiples servidores garantiza la alta disponibilidad y la tolerancia a fallos. Si un servidor falla, los otros pueden asumir la carga de trabajo.
+
+5. Costo-efectividad:
+Hardware commodity: Las bases de datos NoSQL suelen utilizar hardware commodity, lo que las hace más económicas que las bases de datos relacionales tradicionales.
+
+6. Principales usos:
+Análisis de grandes datos: Procesamiento de grandes volúmenes de datos de diversas fuentes, como registros de sensores, datos de redes sociales y registros de transacciones.
+Aplicaciones móviles: Almacenamiento de datos de usuarios, preferencias y contenido generado por el usuario.
+Internet de las Cosas (IoT): Gestión de datos de dispositivos conectados, como sensores y actuadores.
+Aplicaciones en tiempo real: Procesamiento de datos en tiempo real, como el análisis de streaming de datos.

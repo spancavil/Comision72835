@@ -1,0 +1,11 @@
+Diferencias entre DB relacionales y no relacionales => https://aws.amazon.com/compare/the-difference-between-relational-and-non-relational-databases/
+
+Install mongo in a docker container => https://www.mongodb.com/docs/manual/tutorial/install-mongodb-community-with-docker/
+
+Mongo shell (para acceder desde el CLI al container y ejecutar comandos) => https://www.mongodb.com/docs/mongodb-shell/install/
+
+Mongo Compass (interfaz gráfica para acceder) => https://www.mongodb.com/docs/compass/current/install/
+
+Docker compose para Mongo DB => https://www.bmc.com/blogs/mongodb-docker-container/
+
+CONSIGNA => https://docs.google.com/presentation/d/1K3HsnyTI_qY7EExeqKGVEdzK73FsLrS_iXq-TIV1-w0/edit?usp=sharing
