@@ -69,6 +69,9 @@ db.products.insertMany(documents)
 //FILTROS
 db.pets.find({ nombre: { $not: { $eq: 'Claudio' } } })
 db.pets.find({ $or: [{ edad: { $lte: 1 } }, { edad: { $gt: 7 } }] })
+
+db.pets.find({ nombre: { $not: { $eq: 'Claudio' } } }) // nombre === 'Claudio' || nombre === 'Paladar'
+
 db.pets.find({ propAdicional: { $exists: true } })
 
 db.pets.find({ animal: { $in: ['perro', 'gato'] } })
@@ -84,6 +87,12 @@ db.pets
   .sort({ nombre: 1 })
 db.products.find().limit(10)
 db.products.find().skip(10).limit(10)
+
+//Paginado
+cantidad = 15
+nroPagina = 5
+//Solo si el nro de pagina no es 1 => skips = 0
+skips = cantidad * nroPagina
 
 db.pets.find({}, { propAdicional: 1 })
 
