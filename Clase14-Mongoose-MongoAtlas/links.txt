@@ -1,0 +1,2 @@
+Mongo Atlas => https://www.mongodb.com/products/platform/atlas-database
+Mongoose => https://mongoosejs.com/
