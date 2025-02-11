@@ -2,11 +2,12 @@ import express from 'express'
 import { UsersRouter } from '../routes/index.js'
 import { config } from '../config/index.js'
 import { logger } from '../middleware/logger.js'
-import {
-  clientErrorHandler,
-  errorHandlerFinalStep,
-  logErrors,
-} from '../middleware/multiStepErrorHandling.js'
+// import {
+//   clientErrorHandler,
+//   errorHandlerFinalStep,
+//   logErrors,
+// } from '../middleware/multiStepErrorHandling.js'
+import errorHandler from '../middleware/errorHandling.js'
 
 const initApp = () => {
   const app = express()
@@ -21,10 +22,10 @@ const initApp = () => {
   app.use(logger)
   //Router para API (arranca con /api)
   app.use('/api/users', UsersRouter)
-  // app.use(errorHandler)
-  app.use(logErrors)
-  app.use(clientErrorHandler)
-  app.use(errorHandlerFinalStep)
+  app.use(errorHandler)
+  // app.use(logErrors)
+  // app.use(clientErrorHandler)
+  // app.use(errorHandlerFinalStep)
   return app
 }
 
