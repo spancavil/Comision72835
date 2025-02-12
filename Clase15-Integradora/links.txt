@@ -1,0 +1,4 @@
+Modelo de capas => https://dev.to/blindkai/backend-layered-architecture-514h
+Tomar archivo .env => https://nodejs.org/en/learn/command-line/how-to-read-environment-variables-from-nodejs
+Multer => https://github.com/expressjs/multer
+Joi validators => https://joi.dev/api/?v=17.13.3
