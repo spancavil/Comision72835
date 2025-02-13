@@ -9,5 +9,5 @@ export const userCreateSchema = Joi.object({
 
 export const userCreateProfileImageSchema = Joi.object({
   profileImage: Joi.string().optional(),
-  size: Joi.number().optional().max(5000000),
+  size: Joi.number().optional().max(5e6),
 })

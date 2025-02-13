@@ -30,6 +30,7 @@ export const validateCreateUserImage = (req, res, next) => {
 }
 
 export const validateCreateUser = (req, res, next) => {
+  console.log(req.body)
   //Nos devuelve un array de errores o undefined
   const { error } = userCreateSchema.validate(req.body)
   if (error) {

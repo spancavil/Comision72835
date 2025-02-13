@@ -1,8 +1,16 @@
 import { Router } from 'express'
 import { UserModel } from '../models/user.model.js'
 import { isValidObjectId } from 'mongoose'
+import {
+  validateCreateUser,
+  validateCreateUserImage,
+} from '../middlewareS/validationMiddleware.js'
+import { multerUploaderMiddleware } from '../middlewareS/multer.js'
+import { UserController } from '../controllers/user.controller.js'
 
 export const UsersRouter = Router()
+
+const userController = new UserController()
 
 UsersRouter.get('/', async (req, res, next) => {
   //get users
@@ -40,33 +48,25 @@ UsersRouter.get('/:id', async (req, res, next) => {
   }
 })
 
-UsersRouter.post('/', async (req, res, next) => {
-  try {
-    //Destructuramos el body
-    const { firstName, lastName, email } = req.body
-    if (!firstName || !lastName || !email)
-      res
-        .status(400)
-        .send({ message: 'Fields firstName, lastName and email are required' })
-    else {
-      const userCreated = await UserModel.insertOne({
-        firstName,
-        lastName,
-        email,
-      })
-      res.send({
-        message: 'User created succesfully',
-        data: userCreated,
-      })
-    }
-  } catch (error) {
-    error.message = `Error en la ruta POST /api/users/:id.\n${error.message}`
-    next(error)
-  }
-})
+//Ruta modelo
+UsersRouter.post(
+  '/',
+  multerUploaderMiddleware.fields([
+    {
+      name: 'profileImage',
+      maxCount: 1,
+    },
+  ]),
+  validateCreateUserImage,
+  validateCreateUser,
+  userController.createUser
+)
 
 //UserModel.updateOne()
 UsersRouter.put('/:id', (req, res) => {})
 
 //UserModel.deleteOne()
-UsersRouter.delete('/:id', (req, res) => {})
+UsersRouter.delete('/:id', (req, res) => {
+  //Eliminar el usuario de mongo
+  //Eliminar la foto de perfil de la carpeta uploads
+})

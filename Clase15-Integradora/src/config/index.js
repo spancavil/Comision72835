@@ -7,6 +7,9 @@ import { dirname, join } from 'path'
 const __filename = fileURLToPath(import.meta.url)
 export const __dirname = join(dirname(__filename), '../../')
 
+const USERMONGODB = process.env.USERMONGODB
+const PASSWORDMONGODB = process.env.PASSWORDMONGODB
+
 //ejemplo de uso de variable de entorno (para datos sensibles)
 // const userName = process.env.userMongoDB
 
@@ -15,8 +18,6 @@ export const config = {
   PORT: 3006,
   db: {
     //coderhouse será la base de datos a la cual se conectará
-    connectionString: `mongodb+srv://root:ATisyKd4TcQmaQYF@cluster0.vchky.mongodb.net/coderhouse?retryWrites=true&w=majority&appName=Cluster0`,
+    connectionString: `mongodb+srv://${USERMONGODB}:${PASSWORDMONGODB}@cluster0.vchky.mongodb.net/coderhouse?retryWrites=true&w=majority&appName=Cluster0`,
   },
 }
-
-console.log(config.dirname)

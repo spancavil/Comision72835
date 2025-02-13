@@ -1,15 +1,16 @@
 import { UserService } from '../services/index.js'
 
 export class UserController {
+  #userService
   constructor() {
-    this.userService = new UserService()
+    this.#userService = new UserService()
   }
 
   createUser = async (req, res, next) => {
     try {
       const { firstName, lastName, email } = req.body
       const profileImage = req.profileImage
-      const userCreated = await this.userService.createUser({
+      const userCreated = await this.#userService.createUser({
         email,
         firstName,
         lastName,
