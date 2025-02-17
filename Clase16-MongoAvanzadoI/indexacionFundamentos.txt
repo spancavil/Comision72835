@@ -1,0 +1,34 @@
+La indexación en MongoDB funciona de manera similar a los índices en un libro. Permiten a la base de datos encontrar rápidamente los documentos que coinciden con una consulta, sin tener que escanear toda la colección.
+
+¿Cómo funciona?
+
+Creación del índice: Cuando se crea un índice en un campo específico de una colección, MongoDB crea una estructura de datos separada que contiene los valores de ese campo y punteros a los documentos correspondientes. Esta estructura de datos suele ser un árbol B-tree, que permite búsquedas eficientes.
+Consultas: Cuando se realiza una consulta que incluye el campo indexado, MongoDB utiliza el índice para localizar rápidamente los documentos que cumplen con los criterios de búsqueda. En lugar de examinar cada documento de la colección, MongoDB solo tiene que recorrer el índice, lo que reduce drásticamente el tiempo de respuesta.
+
+ARBOL B-TREE
+Un árbol B-tree es como un diccionario organizado de forma especial. En lugar de buscar palabra por palabra, el diccionario está dividido en secciones, y cada sección tiene un índice.
+
+RAIZ: La primera página del diccionario sería la "raíz" del árbol. Esta página índice te dice en qué sección del diccionario buscar (por ejemplo, "A-D", "E-H", "I-L", etc.).
+RAMAS: Cada sección del índice raíz te lleva a otra página índice, que divide aún más las secciones (por ejemplo, dentro de "A-D", tendrías "A-B", "C-D"). Estas son las "ramas" del árbol.
+HOJAS: Finalmente, llegas a las páginas donde están las palabras y sus definiciones. Estas son las "hojas" del árbol.
+
+Cómo funciona la búsqueda:
+
+Empiezas en la raíz: Buscas en la primera página índice la sección que contiene la palabra que buscas.
+Sigues las ramas: Vas a la página índice correspondiente y repites el proceso hasta llegar a una página de definiciones (una hoja).
+Encuentras la palabra: Una vez en la hoja, buscas la palabra y su definición.
+
+Ventajas del árbol B-tree:
+
+Rapidez: No tienes que buscar en todo el diccionario, solo en la sección correcta.
+Eficiencia: El diccionario se mantiene organizado, lo que facilita la búsqueda.
+Equilibrio: Se mantiene el árbol balanceado para mejorar la búsqueda.
+
+En el contexto de MongoDB:
+
+En MongoDB, los índices B-tree funcionan de manera similar. Cuando creas un índice en un campo, MongoDB crea una estructura como este diccionario para ese campo. Así, cuando realizas una consulta, MongoDB puede encontrar rápidamente los documentos que coinciden con tu búsqueda, sin tener que revisar toda la colección.
+
+Ejemplo concreto:
+
+Imagina que tienes una colección de usuarios con un campo "edad". Creas un índice en el campo "edad".
+Cuando buscas usuarios con edad entre 20 y 30, MongoDB utiliza el índice para ir directamente a la sección de edades entre 20 y 30, sin tener que revisar todos los usuarios.

@@ -1,0 +1,2 @@
+MongoDB Indexación => https://www.mongodb.com/resources/basics/databases/database-index
+Pre => https://mongoosejs.com/docs/api/schema.html#Schema.prototype.pre()
