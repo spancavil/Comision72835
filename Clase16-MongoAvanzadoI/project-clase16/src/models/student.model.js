@@ -26,12 +26,21 @@ const studentSchema = new mongoose.Schema(
       ],
       default: [],
     },
+    country: {
+      type: {
+        country: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'countries',
+        },
+      },
+    },
   },
   { timestamps: false, versionKey: false }
 )
 
-/* studentSchema.pre('findOne', function () {
+studentSchema.pre(['find', 'findOne'], function () {
   this.populate('courses.course')
-}) */
+  //Acá puede ir la lógica que uno quiera
+})
 
 export const StudentModel = mongoose.model(studentCollection, studentSchema)
