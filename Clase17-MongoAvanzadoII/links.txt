@@ -1,0 +1,3 @@
+Aggregation pipeline => https://www.mongodb.com/docs/manual/core/aggregation-pipeline/
+Mongoose paginate => https://www.npmjs.com/package/mongoose-paginate-v2
+Link preentrega => https://docs.google.com/presentation/d/1h-gL9q-rCPFIT5dmzrgIgl87oOFsQheApPvBiCOe7YM/edit?usp=sharing
