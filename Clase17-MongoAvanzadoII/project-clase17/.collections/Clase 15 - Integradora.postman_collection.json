@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "2bf2d75c-52eb-4508-9084-6a370c90b5e8",
+		"name": "Clase 15 - Integradora",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6330947",
+		"_collection_link": "https://cloudy-star-580799.postman.co/workspace/Swagger-Test~bc04aa35-f1a6-46f5-a61a-717d4cf7e9af/collection/6330947-2bf2d75c-52eb-4508-9084-6a370c90b5e8?action=share&source=collection_link&creator=6330947"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Sebas\",\r\n    \"lastName\": \"Ancavil\",\r\n    \"email\": 23123\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/users",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

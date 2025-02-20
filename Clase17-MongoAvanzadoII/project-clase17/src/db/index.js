@@ -1,8 +1,8 @@
 import { connect } from 'mongoose'
 import { config } from '../config/index.js'
-/* import { OrderModel } from '../models/orders.model.js'
+import { OrderModel } from '../models/orders.model.js'
 import mongoose from 'mongoose'
-import { StudentForAggregationModel } from '../models/studentsForAggregation.model.js' */
+import { StudentForAggregationModel } from '../models/studentsForAggregation.model.js'
 
 export const initMongoDBAtlas = async () => {
   try {
@@ -71,11 +71,12 @@ export const initMongoDBAtlas = async () => {
     console.log('Ordenes creadas!') */
 
     //2. No hace falta hacer un groupby, dado que sólo hay una pizza mediana por nombre (no hay repetidas)
-
     /* let orders = await OrderModel.aggregate([
+      //Stage 1. Matchear las pizzas de tamaño medium
       {
         $match: { size: 'medium' },
       },
+      //Stage 2. Proyectamos solo los campos de interés
       {
         $project: { name: 1, quantity: 1, _id: 0 },
       },
@@ -95,9 +96,12 @@ export const initMongoDBAtlas = async () => {
     console.log(ordersGroupby) */
 
     //3. Nuevos pipelines
-    /* let ordersNewPipeline = await OrderModel.aggregate([
+
+    /* const size = 'small'
+
+    let generateReportMediumPizzas = await OrderModel.aggregate([
       {
-        $match: { size: 'medium' },
+        $match: { size: size },
       },
       {
         $group: { _id: '$name', totalQuantity: { $sum: '$quantity' } },
@@ -125,6 +129,11 @@ export const initMongoDBAtlas = async () => {
           orders: 1,
         },
       },
+      {
+        $set: {
+          size: size,
+        },
+      },
       //Guardamos en la collection de reports
       {
         $merge: {
@@ -133,7 +142,7 @@ export const initMongoDBAtlas = async () => {
       },
     ])
 
-    console.log(ordersNewPipeline) */
+    console.log(JSON.stringify(generateReportMediumPizzas, null, '\t')) */
 
     //ACTIVIDAD
 
@@ -186,12 +195,12 @@ export const initMongoDBAtlas = async () => {
     // Obtener el promedio de calificación de las mujeres
 
     //mongoose-paginate-v2
-    /* const response = await StudentForAggregationModel.paginate(
+    const response = await StudentForAggregationModel.paginate(
       {},
-      { limit: 10, page: 1 }
+      { limit: 10, page: 89 }
     )
 
-    console.log(response) */
+    console.log(JSON.stringify(response, null, '\t'))
   } catch (error) {
     console.error(
       `Error en la conexión a la base de datos, motivo: "${error.message}"`
