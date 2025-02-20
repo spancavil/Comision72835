@@ -1,0 +1,12 @@
+import initApp from './app/index.js'
+import { config } from './config/index.js'
+import { initMongoDBAtlas } from './db/index.js'
+
+//Connection MongoDB Atlas
+initMongoDBAtlas()
+
+const app = initApp()
+
+const server = app.listen(config.PORT, () => {
+  console.info(`Server listen on: http://localhost:${config.PORT}`)
+})
