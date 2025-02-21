@@ -15,7 +15,7 @@ export const initMongoDBAtlas = async () => {
     //Entrega final - tests de modelos
     /* const productCreated = await ProductModel.create({
       category: 'ropa hombre',
-      code: 12345,
+      code: 12349,
       description: 'Una bella remera',
       price: 15000,
       stock: 20,
@@ -23,12 +23,25 @@ export const initMongoDBAtlas = async () => {
     }) */
 
     /* const cartCreated = await CartModel.create({
-      products: [{ product: { _id: '' } }],
+      products: [
+        { product: { _id: '67b7c185f84ca887a0a9d235' } },
+        { product: { _id: '67b7c1de717f44a8e64aa80b' } },
+      ],
     }) */
 
     /* const cartFound = await CartModel.findOne({
-      _id: '',
-    }) */
+      _id: '67b7c26bc4575608bac749d6',
+    })
+
+    console.log(JSON.stringify(cartFound, null, '\t')) */
+
+    /* const products = await ProductModel.find({})
+
+    console.log(JSON.stringify(products, null, '\t')) */
+
+    /*    const response = await ProductModel.paginate({}, { limit: 2, page: 4 })
+
+    console.log(JSON.stringify(response, null, '\t')) */
 
     //mongoose-paginate-v2
     /* const response = await StudentForAggregationModel.paginate(

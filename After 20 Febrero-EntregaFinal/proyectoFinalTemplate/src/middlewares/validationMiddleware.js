@@ -1,7 +1,8 @@
+import { getProductsSchema } from '../validations/products.validations.js'
 import {
   userCreateProfileImageSchema,
   userCreateSchema,
-} from '../validations/user.validations.js'
+} from '../validations/template.validations.js'
 
 export const validateCreateUserImage = (req, res, next) => {
   if (!req.files['profileImage']) {
@@ -32,6 +33,19 @@ export const validateCreateUserImage = (req, res, next) => {
 export const validateCreateUser = (req, res, next) => {
   //Nos devuelve un array de errores
   const { error } = userCreateSchema.validate(req.body)
+  if (error) {
+    const errorMessage = error.details
+      .map((detail) => detail.message)
+      .join(', ')
+    return res.status(400).json({ error: errorMessage })
+  }
+
+  next()
+}
+
+export const validateGetProducts = (req, res, next) => {
+  //Nos devuelve un array de errores
+  const { error } = getProductsSchema.validate(req.params)
   if (error) {
     const errorMessage = error.details
       .map((detail) => detail.message)
